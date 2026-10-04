@@ -1,0 +1,117 @@
+{
+  "student_name": "JOSHUA DANREI C. RUIZ",
+  "section": "TN35",
+  "ai_tool": "CHATGPT",
+  "credentials_redacted": true,
+  "requests": [
+    {
+      "id": "R1",
+      "purpose": "List all books",
+      "method": "GET",
+      "path": "/api/v1/books",
+      "authentication": "none",
+      "query_parameters": {},
+      "headers": {},
+      "payload": null,
+      "expected_status": 200,
+      "ai_decision": "Accepted",
+      "validation_evidence": "API Simulator and Postman both returned HTTP 200 and the books collection."
+    },
+    {
+      "id": "R2",
+      "purpose": "List books with ISBN values and sort by author",
+      "method": "GET",
+      "path": "/api/v1/books",
+      "authentication": "none",
+      "query_parameters": {
+        "includeISBN": "true",
+        "sortBy": "author"
+      },
+      "headers": {},
+      "payload": null,
+      "expected_status": 200,
+      "ai_decision": "Accepted",
+      "validation_evidence": "API Simulator returned HTTP 200 with ISBN values and books sorted by author."
+    },
+    {
+      "id": "R3",
+      "purpose": "Authenticate and obtain a temporary API token",
+      "method": "POST",
+      "path": "/api/v1/loginViaBasic",
+      "authentication": "basic-auth",
+      "query_parameters": {},
+      "headers": {},
+      "payload": null,
+      "expected_status": 200,
+      "ai_decision": "Accepted",
+      "validation_evidence": "Actual simulator and Postman responses returned HTTP 200 OK and a temporary authentication token."
+    },
+    {
+      "id": "R4",
+      "purpose": "Add one fictional book",
+      "method": "POST",
+      "path": "/api/v1/books",
+      "authentication": "x-api-key",
+      "query_parameters": {},
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-KEY": "<redacted>"
+      },
+      "payload": {
+        "id": 4,
+        "title": "The Digital Network",
+        "author": "Joshua Ruiz"
+      },
+      "expected_status": 200,
+      "ai_decision": "Accepted",
+      "validation_evidence": "Actual simulator response returned HTTP 200 OK and the newly added fictional book."
+    },
+    {
+      "id": "R5",
+      "purpose": "Retrieve the newly added book by ID",
+      "method": "GET",
+      "path": "/api/v1/books/{id}",
+      "authentication": "none",
+      "query_parameters": {},
+      "headers": {},
+      "payload": null,
+      "expected_status": 200,
+      "ai_decision": "Accepted",
+      "validation_evidence": "Actual simulator response for book ID 4 returned HTTP 200 OK with the book details."
+    },
+    {
+      "id": "R6",
+      "purpose": "Delete the newly added book by ID",
+      "method": "DELETE",
+      "path": "/api/v1/books/{id}",
+      "authentication": "x-api-key",
+      "query_parameters": {},
+      "headers": {
+        "X-API-KEY": "<redacted>"
+      },
+      "payload": null,
+      "expected_status": 200,
+      "ai_decision": "Accepted",
+      "validation_evidence": "Actual simulator response for book ID 4 returned HTTP 200 OK after the authenticated delete request."
+    },
+    {
+      "id": "R7",
+      "purpose": "Validate API-key authorization failure handling",
+      "method": "POST",
+      "path": "/api/v1/books",
+      "authentication": "missing-or-invalid-key",
+      "query_parameters": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "payload": {
+        "id": 4,
+        "title": "The Digital Network",
+        "author": "Joshua Ruiz"
+      },
+      "expected_status": 401,
+      "ai_decision": "Accepted",
+      "validation_evidence": "Intentional invalid-key test returned HTTP 401 Unauthorized. The corrected request returned HTTP 200 OK."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "student_name": "",
+  "section": "",
+  "ai_tool": "",
+  "credentials_redacted": true,
+  "requests": [
+    {
+      "id": "R1",
+      "purpose": "List all books",
+      "method": "",
+      "path": "",
+      "authentication": "",
+      "query_parameters": {},
+      "headers": {},
+      "payload": null,
+      "expected_status": 0,
+      "ai_decision": "",
+      "validation_evidence": ""
+    },
+    {
+      "id": "R2",
+      "purpose": "List books with ISBN values and sort by author",
+      "method": "",
+      "path": "",
+      "authentication": "",
+      "query_parameters": {},
+      "headers": {},
+      "payload": null,
+      "expected_status": 0,
+      "ai_decision": "",
+      "validation_evidence": ""
+    },
+    {
+      "id": "R3",
+      "purpose": "Authenticate and obtain a temporary API token",
+      "method": "",
+      "path": "",
+      "authentication": "",
+      "query_parameters": {},
+      "headers": {},
+      "payload": null,
+      "expected_status": 0,
+      "ai_decision": "",
+      "validation_evidence": ""
+    },
+    {
+      "id": "R4",
+      "purpose": "Add one fictional book",
+      "method": "",
+      "path": "",
+      "authentication": "",
+      "query_parameters": {},
+      "headers": {},
+      "payload": {},
+      "expected_status": 0,
+      "ai_decision": "",
+      "validation_evidence": ""
+    },
+    {
+      "id": "R5",
+      "purpose": "Retrieve the newly added book by ID",
+      "method": "",
+      "path": "",
+      "authentication": "",
+      "query_parameters": {},
+      "headers": {},
+      "payload": null,
+      "expected_status": 0,
+      "ai_decision": "",
+      "validation_evidence": ""
+    },
+    {
+      "id": "R6",
+      "purpose": "Delete the newly added book by ID",
+      "method": "",
+      "path": "",
+      "authentication": "",
+      "query_parameters": {},
+      "headers": {},
+      "payload": null,
+      "expected_status": 0,
+      "ai_decision": "",
+      "validation_evidence": ""
+    },
+    {
+      "id": "R7",
+      "purpose": "Troubleshoot a rejected add-book request with a missing or invalid API key",
+      "method": "",
+      "path": "",
+      "authentication": "",
+      "query_parameters": {},
+      "headers": {},
+      "payload": {},
+      "expected_status": 0,
+      "ai_decision": "",
+      "validation_evidence": ""
+    }
+  ]
+}
